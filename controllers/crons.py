@@ -24,7 +24,7 @@ class EachDayUpdate(webapp2.RequestHandler):
 		keyword_Dictioanry={};
 		location_Dictioanry={};
 		stop_words={"based","company","corporation","productions","corp","year","from"};
-		for i in range(1,4):
+		for i in range(1,2):
 			url= "https://api.angel.co/1/jobs?page="+str(i);
 			print url;
 			#url= "http://localhost/phpmyadmin/www/index"+str(i)+".html";
@@ -45,7 +45,7 @@ class EachDayUpdate(webapp2.RequestHandler):
 					for y in x['tags']:
 
 						if(y['tag_type']=="LocationTag"):
-							for z in y['name'].split(","):
+							for z in re.findall(r"[\w']+", y['name']):
 								location_TagList.append(z.lower())
 							
 

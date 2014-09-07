@@ -3,7 +3,7 @@
 import webapp2
 import urllib2,json
 import jinja2
-import os
+import os,re
 import cgi, cgitb
 from models.models import *
 from google.appengine.api import memcache
@@ -35,13 +35,13 @@ class MainHandler(webapp2.RequestHandler):
 		#location="gurgaon"
 		
 		"""Retriving request form database"""
-		for key in keyword.split():
+		for key in re.findall(r"[\w']+",keyword):
 			key=key.lower();
 			keyword_key=KeywordTags.get_by_key_name(key);
 			if keyword_key:
 				keyword_db.extend(keyword_key.jobids);
 
-		for key in location.split():
+		for key in re.findall(r"[\w']+", location):
 			key=key.lower();
 			location_key=LocationTags.get_by_key_name(key)
 			if location_key:

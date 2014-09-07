@@ -1,5 +1,5 @@
 cron:
 
 - description: Daily Updates
-  url: /crons/
-  schedule: every day 00:00
+  url: /crons
+  schedule: every 59 minutes
