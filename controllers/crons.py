@@ -24,7 +24,7 @@ class EachDayUpdate(webapp2.RequestHandler):
 		keyword_Dictioanry={};
 		location_Dictioanry={};
 		stop_words={"based","company","corporation","productions","corp","year","from"};
-		for i in range(1,2):
+		for i in range(1,4):
 			url= "https://api.angel.co/1/jobs?page="+str(i);
 			print url;
 			#url= "http://localhost/phpmyadmin/www/index"+str(i)+".html";
