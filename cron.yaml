@@ -1,0 +1,5 @@
+cron:
+
+- description: Daily Updates
+  url: /crons/
+  schedule: every day 00:00

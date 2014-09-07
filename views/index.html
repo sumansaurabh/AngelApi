@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+  <!-- [START head_html] -->
+  <head>
+    <link type="text/css" rel="stylesheet" href="/css/style.css" />
+  </head>
+  <!-- [END head_html] -->
+  <body>
+    <h1 font size="24" align="center">Find Your Jobs</h1>
+  <form action="post" enctype="multipart/form-data" method="post">
+    <table id ="default"> 
+      <tr  >
+        <th></th>
+        <th style="text-align:left; font-size:22px">Keyword</th>
+        <th style="text-align:left; font-size:22px">Location / Place</th>
+        
+        <th></th>
+        <th></th>
+        
+
+      </tr>
+      <tr>
+        <td></td>
+        <td style="text-align:left; font-size:22px"><input type="text" name="keyword"></td>
+        <td style="text-align:left; font-size:22px"><input type="text" name="location"></td>
+        <td style="text-align:left; font-size:22px"><input type="submit" value="Submit"><td>
+        
+        <td></td>
+        
+        
+      </tr>
+
+    <table> 
+  </form>
+  
+
+  </body>
+</html>
+{% endautoescape %}

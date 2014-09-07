@@ -1,9 +1,23 @@
-application: your-app-id
+application: angel-app-01
 version: 1
 runtime: python27
 api_version: 1
 threadsafe: true
 
 handlers:
+- url: /css
+  static_dir: css
+
+- url: /crons/.*
+  script: main.application
+  
+
 - url: /.*
-  script: server.application
+  script: main.application
+
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
