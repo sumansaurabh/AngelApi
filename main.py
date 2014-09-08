@@ -7,5 +7,5 @@ print "This is AngelApi app";
 application = webapp2.WSGIApplication([
     ('/', controllerhandle.MainHandler),
     ('/post', viewhandle.MainHandler),
-    ('/crons', crons.EachDayUpdate)
+    ('/crons', crons.UpdateDatastore)
 ], debug=True)
