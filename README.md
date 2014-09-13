@@ -11,8 +11,9 @@
 		c. Only Location 	-- At bottom
 
 #### Process (Cron Job used to update database at 12:00)
-	1) https://api.angel.co/1/jobs?page=1 to 50 job datas are availabe. 
-	2) localhost:8080/cron fetches each job from each page and builds a data-store for Location and Keyword containing corresponding job-ids, containing only Business related jobs (they are segregated using their Role-Tag).Google app engine has a tool called memcache which stores the job in memory(like RAM).
+	1) https://api.angel.co/1/jobs?page=1 to 50 job datas are availabe.
+	2) Business Related Jobs are with Role Tags as: office_manager(103480), marketing(80489), product_manager(80487), sales(80488), human_resources(103479), finance(103477). 
+	3) localhost:8080/cron fetches each job from each page and builds a data-store for Location and Keyword containing corresponding job-ids, containing only Business related jobs (they are segregated using their Role-Tag).Google app engine has a tool called memcache which stores the job in memory(like RAM).
 		Keyword Datastore:- [keyword: {job-ids list} ]
 		Location Datastore:- [location: {job-ids list}]
 		eg. Skill_Table would contain: 
