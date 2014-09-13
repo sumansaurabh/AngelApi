@@ -71,7 +71,7 @@ class UpdateDatastore(webapp2.RequestHandler):
 		return lambda: self.handle_result(rpc)
 
 	def handle_result(self,rpc):
-		stop_words={"based","company","corporation","productions","corp","year","from"};
+		stop_words={"based","company","corporation","productions","corp","year","from","and","the","for"};
 		result = rpc.get_result()
 		data = json.loads(result.content);
 		
@@ -97,7 +97,7 @@ class UpdateDatastore(webapp2.RequestHandler):
 
 				elif(y['tag_type']=="SkillTag"):
 					for keysplit in re.findall(r"[\w']+", y['name']):
-						if(len(keysplit)>3):
+						if(len(keysplit)>2):
 							keysplit=keysplit.lower();
 							#print keysplit;
 							if( list ( set ( [keysplit]) - set(stop_words) ) ):
